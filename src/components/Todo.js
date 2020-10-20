@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Todo({ todo, index, completeTodo }) {
+function Todo({ todo, index, completeTodo, removeTodo }) {
   return (
     <div style={{ textDecoration: todo.isCompleted ? 'line-through' : 'none' }} className='todo'>
       <button onClick={() => completeTodo(index)}>
@@ -8,7 +8,13 @@ function Todo({ todo, index, completeTodo }) {
           ⭕
         </span>
       </button>
-      {`  ${todo.text}`}
+      {` ${todo.text}`}
+
+      <button style={{ float: 'right' }} onClick={() => removeTodo(index)}>
+        <span role='img' aria-label='delete todo'>
+          ❌
+        </span>
+      </button>
     </div>
   );
 }

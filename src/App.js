@@ -26,8 +26,14 @@ function App() {
 
   const completeTodo = (index) => {
     const newTodos = [...todos];
-    newTodos[index].isCompleted = newTodos[index].isCompleted === false ? true : false;
-    console.log(newTodos[index]);
+    // newTodos[index].isCompleted = newTodos[index].isCompleted === false ? true : false;
+    newTodos[index].isCompleted = true;
+    setTodos(newTodos);
+  };
+
+  const removeTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
     console.log(newTodos);
     setTodos(newTodos);
   };
@@ -42,7 +48,7 @@ function App() {
       </h1>
       <div className='todo-list'>
         {todos.map((todo, index) => (
-          <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} />
+          <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} removeTodo={removeTodo} />
         ))}
         <TodoForm addTodo={addTodo} />
       </div>
