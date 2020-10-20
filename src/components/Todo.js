@@ -8,7 +8,7 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
           ⭕
         </span>
       </button>
-      {` ${todo.text}`}
+      {`${todo.text}`}
 
       <button style={{ float: 'right' }} onClick={() => removeTodo(index)}>
         <span role='img' aria-label='delete todo'>
