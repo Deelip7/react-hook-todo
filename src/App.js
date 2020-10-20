@@ -26,13 +26,20 @@ function App() {
 
   const completeTodo = (index) => {
     const newTodos = [...todos];
-    newTodos[index].isCompleted = true;
+    newTodos[index].isCompleted = newTodos[index].isCompleted === false ? true : false;
+    console.log(newTodos[index]);
+    console.log(newTodos);
     setTodos(newTodos);
   };
 
   return (
     <div className='app'>
-      <h1>Todo List 🔰</h1>
+      <h1>
+        Todo List{' '}
+        <span role='img' aria-label='Logo'>
+          🔰
+        </span>
+      </h1>
       <div className='todo-list'>
         {todos.map((todo, index) => (
           <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} />
