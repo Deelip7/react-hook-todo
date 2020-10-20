@@ -42,3 +42,9 @@ h1 {
   background: #fffcfc;
   border: #d95e5e73 1px solid;
 }
+
+button {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+}
